@@ -11,3 +11,5 @@
 [submodule "coronavirus-dashboard-api-v2-server"]
 	path = coronavirus-dashboard-api-v2-server
 	url = https://github.com/publichealthengland/coronavirus-dashboard-api-v2-server.git
+        brnach = local-dev-infra
+

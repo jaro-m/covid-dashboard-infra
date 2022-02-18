@@ -24,21 +24,38 @@ services:
       - covid19-redis
       - covid19-db
 
-  # covid19-apiv2-server:
-  #   build: .
-  #   restart: always
-  #   environment:
-  #     - AZURE_REDIS_HOST=covid19-redis
-  #     - AZURE_REDIS_PORT=6379
-  #     - AZURE_REDIS_PASSWORD=
-  #     - POSTGRES_CONNECTION_STRING=postgres://postgres:postgres@covid19-db:5432/covid19
-  #     - WEBSITES_PORT=8080
-  #   ports:
-  #     - 5300:5100
-  #     - 8080:8080
-  #   links:
-  #     - covid19-redis
-  #     - covid19-db
+  covid19-api-v2-server:
+    build: coronavirus-dashboard-api-v2-server/.
+    restart: always
+    volumes:
+      - ./app/:/app/app
+      - ./server/supervisord.conf:/etc/supervisor/conf.d/supervisord.conf
+      - ./server/gunicorn_conf.py:/gunicorn_conf.py
+      - ./server/upload.nginx:/etc/nginx/conf.d/upload.conf
+      - ./server/engine.nginx:/etc/nginx/conf.d/engine.conf
+    ports:
+      - 5000:5000
+    env_file:
+      - .env.dev
+    environment:
+      - PYTHONUNBUFFERED=1;
+      - APPINSIGHTS_INSTRUMENTATIONKEY=00000000-0000-0000-0000-000000000000;
+      - DeploymentBlobStorage=
+      - IS_DEV=1
+      - FLASK_DEV=DEVELOPMENT
+      - API_ENV=DEVELOPMENT
+      - POSTGRES_CONNECTION_STRING=postgres://postgres:postgres@covid19-db:5432/covid19
+      - APPINSIGHTS_INSTRUMENTATIONKEY=00000000-0000-0000-0000-000000000000
+
+  azurite:
+    image: "mcr.microsoft.com/azure-storage/azurite"
+    container_name: "azurite"    
+    hostname: "azurite"
+    restart: always    
+    ports:
+      - 10000:10000
+      - 10001:10001
+      - 10002:10002
 
   covid19-db:
     image: postgres:14.1-alpine
