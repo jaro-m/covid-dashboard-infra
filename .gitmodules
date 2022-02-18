@@ -1,0 +1,13 @@
+[submodule "coronavirus-dashboard"]
+	path = coronavirus-dashboard
+	url = https://github.com/publichealthengland/coronavirus-dashboard.git
+	branch = v3-development
+[submodule "coronavirus-dashboard-generic-apis"]
+	path = coronavirus-dashboard-generic-apis
+	url = https://github.com/publichealthengland/coronavirus-dashboard-generic-apis.git
+[submodule "coronavirus-dashboard-frontend-server"]
+	path = coronavirus-dashboard-frontend-server
+	url = https://github.com/publichealthengland/coronavirus-dashboard-frontend-server.git
+[submodule "coronavirus-dashboard-api-v2-server"]
+	path = coronavirus-dashboard-api-v2-server
+	url = https://github.com/publichealthengland/coronavirus-dashboard-api-v2-server.git
