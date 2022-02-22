@@ -35,8 +35,6 @@ services:
       - ./server/engine.nginx:/etc/nginx/conf.d/engine.conf
     ports:
       - 5000:5000
-    env_file:
-      - .env.dev
     environment:
       - PYTHONUNBUFFERED=1;
       - APPINSIGHTS_INSTRUMENTATIONKEY=00000000-0000-0000-0000-000000000000;
