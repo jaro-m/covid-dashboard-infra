@@ -2,6 +2,8 @@ version: '3.7'
 
 services:
   covid19-redis:
+    container_name: covid19-redis
+    hostname: covid19-redis
     image: redis:6.2-alpine
     restart: always
     ports:
@@ -9,6 +11,8 @@ services:
     command: redis-server --save 20 1 --loglevel warning
 
   covid19-generic-apis:
+    container_name: covid19-apis
+    hostname: covid19-apis
     build: coronavirus-dashboard-generic-apis/.
     restart: always
     environment:
@@ -25,6 +29,8 @@ services:
       - covid19-db
 
   covid19-api-v2-server:
+    container_name: covid19-apiv2
+    hostname: covid19-apiv2
     build: coronavirus-dashboard-api-v2-server/.
     restart: always
     volumes:
@@ -46,16 +52,18 @@ services:
       - APPINSIGHTS_INSTRUMENTATIONKEY=00000000-0000-0000-0000-000000000000
 
   azurite:
+    container_name: covid19-azurite
+    hostname: covid19-azurite
     image: "mcr.microsoft.com/azure-storage/azurite"
-    container_name: "azurite"    
-    hostname: "azurite"
-    restart: always    
+    restart: always
     ports:
       - 10000:10000
       - 10001:10001
       - 10002:10002
 
   covid19-db:
+    container_name: covid19-db
+    hostname: covid19-db
     image: postgres:14.1-alpine
     restart: always
     environment:
@@ -68,7 +76,8 @@ services:
       - db:/var/lib/postgresql/data
 
   pgadmin:
-    container_name: pgadmin4_container
+    container_name: covid19-pgadmin
+    hostname: covid19-pgadmin
     image: dpage/pgadmin4
     restart: always
     environment:
