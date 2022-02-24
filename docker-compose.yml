@@ -45,6 +45,14 @@ services:
       - POSTGRES_CONNECTION_STRING=postgres://postgres:postgres@covid19-db:5432/covid19
       - APPINSIGHTS_INSTRUMENTATIONKEY=00000000-0000-0000-0000-000000000000
 
+  covid-etl-functions-dev:
+    build: coronavirus-dashboard-etl-functions-dev/.
+    restart: always
+    container_name: "etl-functions"
+    hostname: "etl-functions"
+    ports:
+      - 8081:80
+
   azurite:
     image: "mcr.microsoft.com/azure-storage/azurite"
     container_name: "azurite"    
