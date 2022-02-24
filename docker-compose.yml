@@ -52,6 +52,8 @@ services:
     hostname: "etl-functions"
     ports:
       - 8081:80
+    volumes:
+      - ./coronavirus-dashboard-etl-functions-dev:/home/site/wwwroot:cached
 
   azurite:
     image: "mcr.microsoft.com/azure-storage/azurite"
