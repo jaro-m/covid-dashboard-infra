@@ -13,3 +13,8 @@
 	url = https://github.com/publichealthengland/coronavirus-dashboard-api-v2-server.git
     branch = local-dev-infra
 
+[submodule "coronavirus-dashboard-management"]
+	path = coronavirus-dashboard-management
+	url = https://github.com/publichealthengland/coronavirus-dashboard-management.git
+        branch = CDD-46
+
