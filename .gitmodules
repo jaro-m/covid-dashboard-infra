@@ -17,3 +17,6 @@
 	url = https://github.com/publichealthengland/coronavirus-dashboard-management.git
         branch = CDD-46
 
+[submodule "coronavirus-dashboard-pipeline-etl"]
+	path = coronavirus-dashboard-pipeline-etl
+	url = https://github.com/publichealthengland/coronavirus-dashboard-pipeline-etl.git
