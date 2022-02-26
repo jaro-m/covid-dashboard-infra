@@ -41,15 +41,14 @@ services:
       - ./coronavirus-dashboard-api-v2-server/server/engine.nginx:/etc/nginx/conf.d/engine.conf
     ports:
       - 5000:5000
+    env_file:
+      - .env.dev
     environment:
       - PYTHONUNBUFFERED=1;
       - APPINSIGHTS_INSTRUMENTATIONKEY=00000000-0000-0000-0000-000000000000;
-      - DeploymentBlobStorage=
       - IS_DEV=1
       - FLASK_DEV=DEVELOPMENT
       - API_ENV=DEVELOPMENT
-      - POSTGRES_CONNECTION_STRING=postgres://postgres:postgres@covid19-db:5432/covid19
-      - APPINSIGHTS_INSTRUMENTATIONKEY=00000000-0000-0000-0000-000000000000
 
   azurite:
     container_name: covid19-azurite
@@ -69,7 +68,7 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=covid19
+      - POSTGRES_DB=covid19-db
     ports:
       - '5432:5432'
     volumes:

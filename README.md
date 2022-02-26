@@ -65,6 +65,17 @@ Run this to restore the database (_.dump_ file is needed for that):
 pg_restore -h localhost -p 5432 -U postgres -d covid19 -v covid19.dump
 ```
 
+### Environmental variables
+
+The keys that has to be set up (usually in `.env.dev` file):
+
+```text
+API_ENV
+POSTGRES_CONNECTION_STRING
+DeploymentBlobStorage
+
+```
+
 ### Run services
 
 Generic APIs:
