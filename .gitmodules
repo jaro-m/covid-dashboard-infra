@@ -1,22 +1,26 @@
 [submodule "coronavirus-dashboard"]
 	path = coronavirus-dashboard
-	url = https://github.com/publichealthengland/coronavirus-dashboard.git
+	url = https://github.com/jaro-m/coronavirus-dashboard.git
 	branch = v3-development
+	
 [submodule "coronavirus-dashboard-generic-apis"]
 	path = coronavirus-dashboard-generic-apis
-	url = https://github.com/publichealthengland/coronavirus-dashboard-generic-apis.git
+	url = https://github.com/jaro-m/coronavirus-dashboard-generic-apis.git
+	
 [submodule "coronavirus-dashboard-frontend-server"]
 	path = coronavirus-dashboard-frontend-server
-	url = https://github.com/publichealthengland/coronavirus-dashboard-frontend-server.git
+	url = https://github.com/jaro-m/coronavirus-dashboard-frontend-server.git
+	
 [submodule "coronavirus-dashboard-api-v2-server"]
 	path = coronavirus-dashboard-api-v2-server
-	url = https://github.com/publichealthengland/coronavirus-dashboard-api-v2-server.git
+	url = https://github.com/jaro-m/coronavirus-dashboard-api-v2-server.git
         branch = local-dev-infra
+	
 [submodule "coronavirus-dashboard-management"]
 	path = coronavirus-dashboard-management
-	url = https://github.com/publichealthengland/coronavirus-dashboard-management.git
+	url = https://github.com/jaro-m/coronavirus-dashboard-management.git
         branch = CDD-46
 
 [submodule "coronavirus-dashboard-pipeline-etl"]
 	path = coronavirus-dashboard-pipeline-etl
-	url = https://github.com/publichealthengland/coronavirus-dashboard-pipeline-etl.git
+	url = https://github.com/jaro-m/coronavirus-dashboard-pipeline-etl.git
